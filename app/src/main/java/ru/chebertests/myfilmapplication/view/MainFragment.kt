@@ -1,40 +1,30 @@
-package ru.chebertests.myfilmapplication.view;
+package ru.chebertests.myfilmapplication.view
 
-import androidx.lifecycle.ViewModelProvider;
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import ru.chebertests.myfilmapplication.R
+import ru.chebertests.myfilmapplication.viewmodel.MainViewModel
 
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import ru.chebertests.myfilmapplication.R;
-import ru.chebertests.myfilmapplication.viewmodel.MainViewModel;
-
-public class MainFragment extends Fragment {
-
-    private MainViewModel mViewModel;
-
-    public static MainFragment newInstance() {
-        return new MainFragment();
+class MainFragment : Fragment() {
+    private var mViewModel: MainViewModel? = null
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.main_fragment, container, false);
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
+    companion object {
+        fun newInstance(): MainFragment {
+            return MainFragment()
+        }
+    }
 }

@@ -1,7 +1,6 @@
-package ru.chebertests.myfilmapplication.viewmodel;
+package ru.chebertests.myfilmapplication.viewmodel
 
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel
 
-public class MainViewModel extends ViewModel {
-    // TODO: Implement the ViewModel
+class MainViewModel : ViewModel() { // TODO: Implement the ViewModel
 }

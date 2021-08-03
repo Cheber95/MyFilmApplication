@@ -1,22 +1,17 @@
-package ru.chebertests.myfilmapplication.view;
+package ru.chebertests.myfilmapplication.view
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import ru.chebertests.myfilmapplication.R
 
-import android.os.Bundle;
-
-import ru.chebertests.myfilmapplication.R;
-import ru.chebertests.myfilmapplication.view.MainFragment;
-
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
+            supportFragmentManager.beginTransaction()
                     .replace(R.id.container, MainFragment.newInstance())
-                    .commitNow();
+                    .commitNow()
         }
     }
 }
