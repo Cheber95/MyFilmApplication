@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    android:layout_height="350dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/name_of_film"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/some_film_name"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"/>
+
+        <ImageView
+            android:id="@+id/poster_film_url"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:src="@drawable/ic_launcher_background"
+            android:scaleType="centerCrop"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
