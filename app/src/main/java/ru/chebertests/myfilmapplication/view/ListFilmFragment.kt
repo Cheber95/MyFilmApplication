@@ -9,11 +9,11 @@ import androidx.lifecycle.ViewModelProvider
 import ru.chebertests.myfilmapplication.R
 import ru.chebertests.myfilmapplication.viewmodel.MainViewModel
 
-class MainFragment : Fragment() {
+class ListFilmFragment : Fragment() {
     private var mViewModel: MainViewModel? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.film_list_fragment, container, false)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,8 +23,8 @@ class MainFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(): MainFragment {
-            return MainFragment()
+        fun newInstance(): ListFilmFragment {
+            return ListFilmFragment()
         }
     }
 }
